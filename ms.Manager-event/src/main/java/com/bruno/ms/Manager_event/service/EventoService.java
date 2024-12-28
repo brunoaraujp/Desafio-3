@@ -17,4 +17,10 @@ public class EventoService {
 
         return eventoRepositorio.save(evento);
     }
+    @Transactional
+    public Evento buscarPor(String id) {
+       return eventoRepositorio.findById(id).orElseThrow(
+               ()-> new RuntimeException("usuario não encontrado")
+       );
+    }
 }
