@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("api/Evento")
 public class EventoControle {
@@ -31,6 +33,17 @@ public class EventoControle {
         Evento eve = eventoService.buscarPor(id);
 
         return ResponseEntity.ok(eve);
+
+
+    }
+
+
+    @GetMapping
+    public ResponseEntity<List<Evento>> bucartods(){
+
+        List<Evento> evets = eventoService.buscartodos();
+
+        return ResponseEntity.ok(evets);
 
 
     }

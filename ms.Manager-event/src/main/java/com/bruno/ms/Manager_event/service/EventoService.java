@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class EventoService {
 
@@ -22,5 +24,11 @@ public class EventoService {
        return eventoRepositorio.findById(id).orElseThrow(
                ()-> new RuntimeException("usuario não encontrado")
        );
+    }
+    @Transactional
+    public List<Evento> buscartodos() {
+        return eventoRepositorio.findAll();
+
+
     }
 }
