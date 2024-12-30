@@ -48,6 +48,14 @@ public class EventoControle {
 
     }
 
+    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+    public ResponseEntity<Evento> atualizarEvento (@PathVariable String id, @RequestBody Evento evento){
+        Evento eve = eventoService.salvar(evento);
+
+        return ResponseEntity.ok(eve);
+    }
+
+
 
 
 
