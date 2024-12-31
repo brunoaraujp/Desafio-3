@@ -1,6 +1,8 @@
 package com.bruno.ms.Manager_event.Controller;
 
+import com.bruno.ms.Manager_event.dtos.EventoRespostaDto;
 import com.bruno.ms.Manager_event.dtos.criacaoeventodto;
+import com.bruno.ms.Manager_event.dtos.mapper.Eventmaper;
 import com.bruno.ms.Manager_event.entidade.Evento;
 import com.bruno.ms.Manager_event.service.EventoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,11 +21,12 @@ public class EventoControle {
     EventoService eventoService ;
 
     @PostMapping
-    public ResponseEntity<Evento> criarEvento (@RequestBody criacaoeventodto criacaoeventodto){
+    public ResponseEntity<EventoRespostaDto> criarEvento (@RequestBody criacaoeventodto criacaoeventodto){
 
-        Evento eve = eventoService.salvar();
+       
+        Evento eve = eventoService.salvar(Eventmaper.toEvento(criacaoeventodto));
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(eve);
+        return ResponseEntity.status(HttpStatus.CREATED).body(Eventmaper.todto(eve));
 
 
     }
