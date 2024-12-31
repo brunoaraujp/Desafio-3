@@ -50,6 +50,14 @@ public class EventoService {
 
 
     }
+    public void deletar( String id){
+        eventoRepositorio.findById(id).orElseThrow(
+                ()-> new RuntimeException("id de evento não encontrado")
+        );
+        eventoRepositorio.deleteById(id);
+    }
+
+
 
 
 }

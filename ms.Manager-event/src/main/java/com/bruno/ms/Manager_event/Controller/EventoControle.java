@@ -55,6 +55,13 @@ public class EventoControle {
         return ResponseEntity.ok(eve);
     }
 
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public ResponseEntity<Void> DeletarEventp (@PathVariable String id){
+         eventoService.deletar(id);
+
+        return ResponseEntity.noContent().build();
+    }
+
 
 
 
