@@ -1,23 +1,13 @@
-package com.bruno.ms.Manager_event.entidade;
+package com.bruno.ms.Manager_event.dtos;
+
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import lombok.ToString;
 
-import java.io.Serializable;
+@NoArgsConstructor @AllArgsConstructor  @ToString
+public class criacaoeventodto {
 
-
-@NoArgsConstructor
-@AllArgsConstructor
-@Document(collection = "db_evento")
-public class Evento  implements Serializable {
-
-
-
-    @Id
     private String id_evento;
 
     private String nome_evento;
@@ -52,19 +42,19 @@ public class Evento  implements Serializable {
         this.descricao = descricao;
     }
 
-    public int getCep() {
-        return cep;
-    }
-
-    public void setCep(int cep) {
-        this.cep = cep;
-    }
-
     public String getDataevento() {
         return dataevento;
     }
 
     public void setDataevento(String dataevento) {
         this.dataevento = dataevento;
+    }
+
+    public int getCep() {
+        return cep;
+    }
+
+    public void setCep(int cep) {
+        this.cep = cep;
     }
 }
