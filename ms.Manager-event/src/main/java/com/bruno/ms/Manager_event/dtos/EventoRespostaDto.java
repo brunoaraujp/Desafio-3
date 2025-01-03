@@ -12,6 +12,21 @@ public class EventoRespostaDto {
 
     private String nome_evento;
 
+    private String descricao;
+
+    private String dataevento;
+
+    private String cep;
+
+    private  String logradouro;
+
+    private  String bairro;
+
+    private  String cidade;
+
+    private  String uf;
+
+
     public String getId_evento() {
         return id_evento;
     }
@@ -44,17 +59,43 @@ public class EventoRespostaDto {
         this.dataevento = dataevento;
     }
 
-    public int getCep() {
+    public String getCep() {
         return cep;
     }
 
-    public void setCep(int cep) {
+    public void setCep(String cep) {
         this.cep = cep;
     }
 
-    private String descricao;
+    public String getLogradouro() {
+        return logradouro;
+    }
 
-    private String dataevento;
+    public void setLogradouro(String logradouro) {
+        this.logradouro = logradouro;
+    }
 
-    private int cep;
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getUf() {
+        return uf;
+    }
+
+    public void setUf(String uf) {
+        this.uf = uf;
+    }
 }
