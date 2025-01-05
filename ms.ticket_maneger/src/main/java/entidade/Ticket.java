@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Ticket {
 
     @Id
-    private int id;
+    private Integer id;
 
     private String Cpf;
 
