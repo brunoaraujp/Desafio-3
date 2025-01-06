@@ -27,6 +27,8 @@ public class EventoRespostaDto {
     private  String uf;
 
 
+
+
     public String getId_evento() {
         return id_evento;
     }
