@@ -22,13 +22,15 @@ public class EventoControle {
 
     @Autowired
     Eventocusumerfeing eventosumerfeing ;
+    @Autowired
+
 
     @PostMapping
     public ResponseEntity<EventoRespostaDto> criarEvento (@RequestBody criacaoeventodto criacaoeventodto){
 
 
         Evento eve = eventoService.salvar(Eventmaper.toEvento(criacaoeventodto));
-        eventosumerfeing.getEvento(Eventmaper.toEvento(criacaoeventodto).getCep());
+
         return ResponseEntity.status(HttpStatus.CREATED).body(Eventmaper.todto(eve));
 
 
