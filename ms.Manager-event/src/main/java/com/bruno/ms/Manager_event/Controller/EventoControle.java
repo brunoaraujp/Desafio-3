@@ -22,7 +22,7 @@ public class EventoControle {
 
     @Autowired
     Eventocusumerfeing eventosumerfeing ;
-    @Autowired
+
 
 
     @PostMapping

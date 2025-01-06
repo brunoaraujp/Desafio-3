@@ -5,13 +5,13 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
+import java.io.Serializable;
 import java.util.Objects;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Document(collection = "db_ticket")
-public class Ticket {
+public class Ticket   implements Serializable {
 
     @Id
     private int ticketId;
@@ -21,7 +21,6 @@ public class Ticket {
     private String customerEmail ;
 
     private String cpf;
-
 
     private String id_evento ;
 
