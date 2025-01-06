@@ -18,6 +18,15 @@ public class TicketService {
     @Autowired
     TicketRepositorio ticketRepositorio;
 
+    public  void deletar(String id) {
+
+        ticketRepositorio.findById(id).orElseThrow(
+                    ()-> new RuntimeException("id de evento não encontrado")
+            );
+            ticketRepositorio.deleteById(id);
+        }
+
+
     public  Ticket atualizar(Ticket ticket) {
         return ticketRepositorio.save(ticket);
 

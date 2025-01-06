@@ -17,7 +17,7 @@ public class TicketControle {
     TicketService ticketService;
 
 
-    @PostMapping
+    @RequestMapping(method =RequestMethod.POST)
     public ResponseEntity<Ticket> criarticket(@RequestBody Ticket ticket) {
 
 
@@ -44,5 +44,12 @@ public class TicketControle {
         Ticket tic = ticketService.salvar(ticket);
 
         return ResponseEntity.ok(tic);
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public ResponseEntity<Void> DeletarTic(@PathVariable String id){
+        ticketService.deletar(id);
+
+        return ResponseEntity.noContent().build();
     }
 }
