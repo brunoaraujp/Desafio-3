@@ -22,7 +22,7 @@ public class EventoControle {
 
     @Autowired
     Eventocusumerfeing eventosumerfeing ;
-    @Autowired
+
 
 
     @PostMapping
@@ -70,6 +70,8 @@ public class EventoControle {
 
         return ResponseEntity.noContent().build();
     }
+
+
 
 
 

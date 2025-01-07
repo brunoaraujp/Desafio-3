@@ -18,7 +18,6 @@ public class EventoService {
     @Transactional
     public Evento salvar(Evento evento) {
 
-
         return eventoRepositorio.save(evento);
     }
     @Transactional
