@@ -7,17 +7,18 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import service.TicketService;
 
+import java.io.Serializable;
+
 
 @RestController
-@RequestMapping( "api/Ticket")
-public class TicketControle {
+@RequestMapping( "api/tickte")
+public class TicketControle implements Serializable {
 
 
     @Autowired
     TicketService ticketService;
 
-
-    @RequestMapping(method =RequestMethod.POST)
+    @PostMapping
     public ResponseEntity<Ticket> criarticket(@RequestBody Ticket ticket) {
 
 
