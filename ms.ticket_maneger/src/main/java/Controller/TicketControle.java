@@ -37,14 +37,6 @@ public class TicketControle implements Serializable {
 
         return ResponseEntity.ok(ticket);
 
-
-    }
-
-    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<Ticket>atualizartic (@PathVariable String id, @RequestBody Ticket ticket){
-        Ticket tic = ticketService.salvar(ticket);
-
-        return ResponseEntity.ok(tic);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
